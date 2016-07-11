@@ -1,0 +1,132 @@
+// bower:scss
+// endbower
+
+@import 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab';
+
+$reg-font: 'Roboto Slab', sans-serif;
+$slab-font: 'Roboto Slab', serif;
+$chaordic-red: #AA1423;
+$supp-gray: #777;
+$bg-gray: #EEE;
+$link-orange: #f07225;
+
+body {
+  background-color: white;
+  font-family: $reg-font;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 2vw;
+
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.text{
+  font-family: $slab-font;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding-top: 10%;
+  color: white;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container input {
+  width: 50%;
+  border: none;
+  border-bottom: 3px solid $link-orange;
+  background-color: transparent;
+  padding-bottom: 1%;
+  color: white;
+  font-size: 100%;
+}
+
+.container input:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: $link-orange;
+}
+
+.container button {
+  border: none;
+  background-color: $link-orange;
+  height: 5%;
+  color: white;
+}
+
+.centered {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.toplist li {
+  list-style-type: none;
+  text-align: left;
+  color: $chaordic-red;
+  border-bottom: 1px solid $bg-gray;
+  padding: 10px 0 10px 0;
+  }
+
+.toplist h1 {
+  color: $chaordic-red;
+}
+.toplist span {
+  float: right;
+  color: $supp-gray;
+}
+
+
+.hit-counter {
+  color: $chaordic-red;
+  background-color: $bg-gray;
+  background-size: 200%;
+  padding: 50px;
+}
+
+.hit-counter p {
+  color: $supp-gray;
+}
+
+.total-hits {
+  margin: 0 auto;
+  width: 20%;
+  padding: 5%;
+  background-color: white;
+}
+
+
+.end {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 20px;
+  font-size: 125%;
+  color: $chaordic-red;
+}
+
+.icon {
+  float: right;
+  margin-left: 10px;
+}
+
+
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
