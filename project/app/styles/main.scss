@@ -63,6 +63,7 @@ body {
   background-color: $link-orange;
   height: 5%;
   color: white;
+  cursor: pointer;
 }
 
 .centered {
@@ -76,16 +77,20 @@ body {
   color: $chaordic-red;
   border-bottom: 1px solid $bg-gray;
   padding: 10px 0 10px 0;
-  }
+}
 
 .toplist h1 {
   color: $chaordic-red;
 }
+
 .toplist span {
   float: right;
   color: $supp-gray;
 }
 
+.toplist {
+  position: relative;
+}
 
 .hit-counter {
   color: $chaordic-red;
@@ -98,7 +103,7 @@ body {
   color: $supp-gray;
 }
 
-.total-hits {
+.hits {
   margin: 0 auto;
   width: 20%;
   padding: 5%;
@@ -120,8 +125,6 @@ body {
   margin-left: 10px;
 }
 
-
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -129,4 +132,11 @@ body {
   padding: 0.2em 0;
 }
 
-
+.arrow-down {
+  width: 0;
+  height: 0;
+  margin: auto;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #ff0000;
+}

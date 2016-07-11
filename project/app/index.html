@@ -27,16 +27,14 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-
-
-
     <div class="container">
       <div class="text">
         <h1> Encurte seus links </h1>
         <p> Links são longos. Encurte os links que você deseja compartilhar</p>
         <p> e acompanhe enquanto viajam através da internet</p>
-        <input class="inputlink" type="text" placeholder="Cole o seu link aqui">
-        <button> ENCURTAR </button>
+        <input onkeyup="inputKeyEvent(event)" id="input-link" type="text" placeholder="Cole o seu link aqui">
+        <span onclick="clearTextEvent()">x</span>
+        <button id="short-and-copy" onclick="shortAndCopyEvent()">ENCURTAR</button>
       </div>
       <img src="images/background-home.jpg">
     </div>
@@ -44,20 +42,14 @@
 <div class="centered">
     <div class="toplist">
       <h1> TOP 5 </h1>
-      <ul>
-        <li> http://chr.dc/xzyxyxz <span class="hits"> 7.919 </span> </li>
-        <li> http://chr.dc/xzyxyxz <span class="hits"> 6.899 </span> </li>
-        <li> http://chr.dc/xzyxyxz <span class="hits"> 2.111 </span> </li>
-        <li> http://chr.dc/xzyxyxz <span class="hits"> 617 </span> </li>
-        <li> http://chr.dc/xzyxyxz <span class="hits"> 43 </span> </li>
-      </ul>
+      <ul id="urls"/>
     </div>
 </div>
-
+    <div class="arrow-down"> </div>
 
 <div class="hit-counter">
   <h1> HITS </h1>
-  <h1 class="total-hits"> 35.713.571 </h1>
+  <h1 id="total-hits" class="hits"></h1>
   <p> Cliques em links </p>
 </div>
 
@@ -78,8 +70,6 @@
   <a>chr.dc</a>
   <a><img src="images/icon-facebook.png" class="icon"></a>
   <a><img src="images/icon-twitter.png" class="icon"> </a>
-
-
 
 </footer>
 
