@@ -33,21 +33,22 @@
         <p> Links são longos. Encurte os links que você deseja compartilhar</p>
         <p> e acompanhe enquanto viajam através da internet</p>
         <input onkeyup="inputKeyEvent(event)" id="input-link" type="text" placeholder="Cole o seu link aqui">
-        <span onclick="clearTextEvent()">x</span>
+        <span id="clear" onclick="clearTextEvent()"></span>
         <button id="short-and-copy" onclick="shortAndCopyEvent()">ENCURTAR</button>
+        <p id="notification"></p>
       </div>
       <img src="images/background-home.jpg">
     </div>
 
 <div class="centered">
-    <div class="toplist">
+    <div class="top-list">
       <h1> TOP 5 </h1>
       <ul id="urls"/>
     </div>
 </div>
-    <div class="arrow-down"> </div>
 
 <div class="hit-counter">
+  <div class="arrow-down"> </div>
   <h1> HITS </h1>
   <h1 id="total-hits" class="hits"></h1>
   <p> Cliques em links </p>
@@ -66,10 +67,9 @@
 
 
 <footer class="end">
-
-  <a>chr.dc</a>
-  <a><img src="images/icon-facebook.png" class="icon"></a>
-  <a><img src="images/icon-twitter.png" class="icon"> </a>
+  <a href="https://www.chaordic.com.br/">chr.dc</a>
+  <a href="https://www.facebook.com/chaordic.com.br/?fref=nf"> <img src="images/icon-facebook.png" class="icon"></a>
+  <a href="https://twitter.com/chaordic"><img src="images/icon-twitter.png" class="icon"> </a>
 
 </footer>
 

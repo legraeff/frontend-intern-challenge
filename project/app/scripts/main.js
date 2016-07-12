@@ -11,11 +11,16 @@ function inputKeyEvent(event){
 function shortify(link){
   var randomString = Math.random().toString(36).replace(/[^a-z0-9]+/g, '').substr(0, 5);
   return 'http://chr.dc/' + randomString;
+
 }
 
 function clearTextEvent(){
   $('#input-link').val('');
   $('#short-and-copy').html('ENCURTAR');
+  $("#notification").html("");
+  $("#clear").html("");
+  $('#input-link').css("color", "#f07225");
+
 }
 
 function shortifyEvent(){
@@ -23,18 +28,22 @@ function shortifyEvent(){
   var reg = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
   if(link.search(reg) == -1) {
-    alert("Link inválido!");
+    $("#notification").html("Link inválido!");
     return;
   }
-
+  $("#notification").html("");
   var shortLink = shortify(link);
+  $('#input-link').css("color", "#fff");
   $('#input-link').val(shortLink);
-  $('#short-and-copy').html('COPIAR');
-}
+  $("#short-and-copy").html("COPIAR");
+  $("#clear").html("&times;");
+  }
 
 function copyEvent(){
   $('#input-link').select();
   document.execCommand('copy');
+  $("#notification").html("Copiado com sucesso!");
+
 }
 
 function shortAndCopyEvent(){

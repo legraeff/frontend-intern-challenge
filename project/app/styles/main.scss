@@ -5,18 +5,17 @@
 
 $reg-font: 'Roboto Slab', sans-serif;
 $slab-font: 'Roboto Slab', serif;
-$chaordic-red: #AA1423;
-$supp-gray: #777;
-$bg-gray: #EEE;
-$link-orange: #f07225;
+$chaordic-color: #aa1423;
+$supp-color: #777;
+$bg-color: #eee;
+$btn-color: #f07225;
 
 body {
-  background-color: white;
+  background-color: #fff;
   font-family: $reg-font;
   text-align: center;
   margin-left: 0;
   margin-right: 0;
-  font-size: 2vw;
 
 }
 
@@ -26,13 +25,12 @@ body {
   padding: 5px;
 }
 
-.text{
-  font-family: $slab-font;
+.text {
   position: absolute;
   height: 100%;
   width: 100%;
   padding-top: 10%;
-  color: white;
+  color: #fff;
 }
 
 .container img {
@@ -43,10 +41,10 @@ body {
 .container input {
   width: 50%;
   border: none;
-  border-bottom: 3px solid $link-orange;
+  border-bottom: 3px solid $btn-color;
   background-color: transparent;
   padding-bottom: 1%;
-  color: white;
+  color: $btn-color;
   font-size: 100%;
 }
 
@@ -54,15 +52,23 @@ body {
   outline: none;
 }
 
-::-webkit-input-placeholder {
-  color: $link-orange;
+.container span {
+  cursor: pointer;
+  position: relative;
+  color: $btn-color
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder {
+  color: $btn-color;
 }
 
 .container button {
   border: none;
-  background-color: $link-orange;
-  height: 5%;
-  color: white;
+  background-color: $btn-color;
+  height: 40px;
+  width: 100px;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -71,43 +77,48 @@ body {
   margin: 0 auto;
 }
 
-.toplist li {
+.top-list li,
+.top-list a {
+  text-decoration: none;
   list-style-type: none;
   text-align: left;
-  color: $chaordic-red;
-  border-bottom: 1px solid $bg-gray;
+  color: $chaordic-color;
+  border-bottom: 1px solid $bg-color;
   padding: 10px 0 10px 0;
 }
-
-.toplist h1 {
-  color: $chaordic-red;
+.top-list h1 {
+  color: $chaordic-color;
 }
 
-.toplist span {
+.top-list span {
   float: right;
-  color: $supp-gray;
+  color: $supp-color;
 }
 
-.toplist {
+.top-list {
   position: relative;
+  padding-bottom: 10%;
 }
 
 .hit-counter {
-  color: $chaordic-red;
-  background-color: $bg-gray;
+  color: $chaordic-color;
+  background-color: $bg-color;
   background-size: 200%;
-  padding: 50px;
+  font-family: $slab-font;
+  padding-bottom: 10%;
 }
 
 .hit-counter p {
-  color: $supp-gray;
+  color: $supp-color;
 }
 
 .hits {
   margin: 0 auto;
   width: 20%;
-  padding: 5%;
-  background-color: white;
+  padding: 1%;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid $supp-color
 }
 
 
@@ -117,7 +128,10 @@ body {
   text-align: left;
   padding-top: 20px;
   font-size: 125%;
-  color: $chaordic-red;
+  color: $chaordic-color;
+  a {
+    text-decoration: none;
+  }
 }
 
 .icon {
@@ -136,7 +150,7 @@ body {
   width: 0;
   height: 0;
   margin: auto;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #ff0000;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #fff;
 }
