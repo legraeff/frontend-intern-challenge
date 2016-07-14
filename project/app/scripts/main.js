@@ -18,15 +18,17 @@ function shortifyEvent(){
     $('#notification').html('Link inválido!');
     return;
   }
-
+  var input = $("#input-link");
+  var clear = $("#clear");
+  var shortAndCopy = $("#short-and-copy");
   $('#notification').html('');
   var shortLink = shortify(link);
-  $('#input-link').val(shortLink);
-  $('#input-link').addClass('blink');
-  $('#clear').removeClass('unclickable');
-  $('#clear').addClass('blink');
-  $('#short-and-copy').text('COPIAR');
-  $('#short-and-copy').addClass('blink');
+  $(input).val(shortLink);
+  $(input).addClass('blink');
+  $(clear).removeClass('unclickable');
+  $(clear).addClass('blink');
+  $(shortAndCopy).text('COPIAR');
+  $(shortAndCopy).addClass('blink');
 }
 
 //Copies the output, short URL.
@@ -37,11 +39,11 @@ function copyEvent(){
 }
 
 //Fire function with Enter key
-function inputKeyEvent(event){
+$("#input-link").keyup(function inputKeyEvent(event){
   if(event.keyCode == 13 && isShort()){
     shortifyEvent();
   }
-}
+});
 
 //Executes the commands when button is clicked.
 $('#short-and-copy').click(function shortAndCopyEvent(){
@@ -54,13 +56,16 @@ $('#short-and-copy').click(function shortAndCopyEvent(){
 
 //Clears the input field, resets color, notification, shortify and clear button.
 $('#clear').click(function clearTextEvent() {
-  $('#input-link').val('');
-  $('#input-link').removeClass('blink');
+  var input = $("#input-link");
+  var clear = $("#clear");
+  var shortAndCopy = $("#short-and-copy");
+  $(input).val('');
+  $(input).removeClass('blink');
   $('#notification').html('');
-  $('#clear').addClass('unclickable');
-  $('#clear').removeClass('blink');
-  $('#short-and-copy').removeClass('blink');
-  $('#short-and-copy').html('ENCURTAR');
+  $(clear).addClass('unclickable');
+  $(clear).removeClass('blink');
+  $(shortAndCopy).removeClass('blink');
+  $(shortAndCopy).html('ENCURTAR');
 });
 
 //Sorts the URLS in the JSON by hits. Appends the Top 5 and the sum of total hits into the HTML.
