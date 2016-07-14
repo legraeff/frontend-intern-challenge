@@ -44,17 +44,16 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  padding-top: 15%;
+  padding-top: 10%;
   @media (max-width: 700px) {
     padding-top: 5%;
   }
 }
 
 .shorten-link {
-  img {
-    width: 100%;
-    height: auto;
-  }
+  background-image: url("../images/background-home.jpg");
+  background-size: cover;
+  padding-bottom: 50%;
   input {
     width: 40%;
     padding-bottom: 1%;
