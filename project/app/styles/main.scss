@@ -1,61 +1,110 @@
-// bower:scss
-// endbower
-
 @import 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab';
 
-$reg-font: 'Roboto Slab', sans-serif;
+/* ----------Variables---------- */
+$reg-font: 'Roboto', sans-serif;
 $slab-font: 'Roboto Slab', serif;
 $chaordic-color: #aa1423;
 $supp-color: #777;
-$bg-color: #eee;
+$bg-topfive: #fff;
+$bg-hits: #eee;
 $btn-color: #f07225;
+$default-color: #fff;
+
+/* ----------Body---------- */
 
 body {
-  background-color: #fff;
-  font-family: $reg-font;
-  text-align: center;
   margin-left: 0;
   margin-right: 0;
-
+  font-family: $reg-font;
+  text-align: center;
+  background-color: $bg-topfive;
+  color: $default-color;
 }
+@media (max-width: 530px) {
+  body {
+    font-size: 75%;
+  }
+  h1 {
+    font-size: 150%;
+  }
+}
+
+
+/* ----------Header---------- */
 
 .logo {
-  display: block;
   margin: 0 auto;
+  display: block;
   padding: 5px;
 }
+
+/* ----------Link shortener section---------- */
 
 .text {
   position: absolute;
   height: 100%;
   width: 100%;
-  padding-top: 10%;
-  color: #fff;
+  padding-top: 15%;
 }
 
-.container img {
-  width: 100%;
-  height: auto;
+@media (max-width: 700px) {
+  .text {
+    padding-top: 5%;
+  }
 }
 
-.container input {
-  width: 50%;
-  border: none;
-  border-bottom: 3px solid $btn-color;
-  background-color: transparent;
-  padding-bottom: 1%;
-  color: $btn-color;
-  font-size: 100%;
+.shorten-link {
+  img {
+    width: 100%;
+    height: auto;
+  }
+  input {
+    width: 40%;
+    padding-bottom: 1%;
+    font-size: 100%;
+    border: none;
+    border-bottom: 3px solid $btn-color;
+    background-color: transparent;
+    color: $btn-color;
+  }
+  input:focus {
+    outline: none;
+  }
+  span {
+    position: relative;
+    left: -20px;
+    top: 3px;
+    display: inline-block;
+    font-size: 150%;
+    color: $btn-color;
+    cursor: pointer;
+  }
+  button {
+    position: relative;
+    left: -15px;
+    height: 40px;
+    width: 100px;
+    color: $default-color;
+    background-color: $btn-color;
+    border: none;
+    cursor: pointer;
+    }
+  h1 {
+    font-family: $slab-font;
+  }
 }
 
-.container input:focus {
-  outline: none;
+@media (max-width: 530px) {
+  .shorten-link button {
+    height: 26px;
+    width: 90px;
+  }
 }
 
-.container span {
-  cursor: pointer;
-  position: relative;
-  color: $btn-color
+/* class to hide clear button */
+.unclickable {
+  opacity: 0;
+  pointer-events: none;
 }
 
 ::-webkit-input-placeholder,
@@ -63,73 +112,83 @@ body {
   color: $btn-color;
 }
 
-.container button {
-  border: none;
-  background-color: $btn-color;
-  height: 40px;
-  width: 100px;
-  color: #fff;
-  cursor: pointer;
+/* ----------Top 5 List Section---------- */
+
+.top-list {
+  width: 50%;
+  margin: 0 auto;
+  ul {
+    position: relative;
+    left: -10px; /* Fixing bullet points space in list items */
+  }
+  li, a {
+    padding: 10px 0 10px 0;
+    list-style-type: none;
+    text-decoration: none;
+    text-align: left;
+    color: $chaordic-color;
+    border-bottom: 1px solid $bg-hits;
+    &:hover {
+      background-color: $bg-hits;
+    }
+  }
+  h1 {
+    color: $chaordic-color;
+    font-family: $slab-font;
+  }
+  span {
+    float: right;
+    color: $supp-color;
+  }
 }
 
 .centered {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.top-list li,
-.top-list a {
-  text-decoration: none;
-  list-style-type: none;
-  text-align: left;
-  color: $chaordic-color;
-  border-bottom: 1px solid $bg-color;
-  padding: 10px 0 10px 0;
-}
-.top-list h1 {
-  color: $chaordic-color;
-}
-
-.top-list span {
-  float: right;
-  color: $supp-color;
-}
-
-.top-list {
   position: relative;
   padding-bottom: 10%;
 }
 
-.hit-counter {
-  color: $chaordic-color;
-  background-color: $bg-color;
-  background-size: 200%;
-  font-family: $slab-font;
-  padding-bottom: 10%;
-}
+/* ----------Total Hits Counter---------- */
 
-.hit-counter p {
-  color: $supp-color;
+.arrow-down {
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid $bg-topfive;
 }
 
 .hits {
-  margin: 0 auto;
-  width: 20%;
-  padding: 1%;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid $supp-color
+  padding-bottom: 10%;
+  color: $chaordic-color;
+  background-color: $bg-hits;
+  p {
+    color: $supp-color;
+  }
+  h1 {
+    font-family: $slab-font
+  }
 }
 
+.hit-counter {
+  margin: 0 auto;
+  width: 15%;
+  padding: 0.5%;
+  background-color: $bg-topfive;
+  border-radius: 5px;
+  border: 1px solid #d2d2d2;
+}
+
+/* ----------Footer---------- */
 
 .end {
-  width: 60%;
   margin: 0 auto;
-  text-align: left;
+  width: 60%;
   padding-top: 20px;
+  text-align: left;
   font-size: 125%;
-  color: $chaordic-color;
   a {
+    color: $chaordic-color;
     text-decoration: none;
   }
 }
@@ -139,18 +198,15 @@ body {
   margin-left: 10px;
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+/* ----------Animation---------- */
+
+.blink {
+  animation-name: animate;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
-.arrow-down {
-  width: 0;
-  height: 0;
-  margin: auto;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 50px solid #fff;
+@keyframes animate {
+  0%   {color: rgba(0,0,0,0);}
+  100% {color: $default-color}
 }
