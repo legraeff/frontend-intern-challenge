@@ -73,8 +73,9 @@ $('#clear').click(function clearTextEvent() {
     success: function (data){
       var urlsData = JSON.parse(data);
       urlsData.sort(function(a, b){return b.hits - a.hits;});
-      for (var i=0; i < 5; i++) {
-        var urlInfo = urlsData[i];
+      var topFiveUrls = urlsData.slice (0,5);
+      for (var i=0; i < topFiveUrls.length; i++) {
+        var urlInfo = topFiveUrls[i];
         $('#urls').append('<li><a href="' +
             urlInfo.url + '">' +
             urlInfo.shortUrl + '</a><span>' +
@@ -88,3 +89,4 @@ $('#clear').click(function clearTextEvent() {
     }
   });
 })();
+
